@@ -22,3 +22,20 @@
 
 <%= link_to 'Edit', edit_auction_path(@auction) %> |
 <%= link_to 'Back', auctions_path %>
+
+
+<%= form_for [@auction, @bid] do |f| %>
+  <div>
+    <%= f.text_area :bidprice %>
+  </div>
+  <%= f.submit %>
+<% end %>
+
+<h2>Bids</h2>
+<% @auction.bids.each do |bid| %>
+  <%= bid.bidprice %>
+  <%#= link_to "delete", question_answer_path(@question, ans),
+                        method: :delete,
+                        data: {confirm: "Are you sure?"} %>
+  <hr>
+<% end %>

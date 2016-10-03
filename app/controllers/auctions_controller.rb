@@ -1,29 +1,22 @@
 class AuctionsController < ApplicationController
   before_action :set_auction, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show, :index]
 
-  # GET /auctions
-  # GET /auctions.json
   def index
     @auctions = Auction.all
   end
 
-  # GET /auctions/1
-  # GET /auctions/1.json
   def show
+    @bid = Bid.new
   end
 
-  # GET /auctions/new
   def new
     @auction = Auction.new
   end
 
-  # GET /auctions/1/edit
   def edit
   end
 
-  # POST /auctions
-  # POST /auctions.json
   def create
     @auction = Auction.new(auction_params)
 
