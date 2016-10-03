@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'kaminari'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
 
@@ -36,9 +37,17 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'factory_girl_rails'
 end
 
 group :development do
+  gem 'faker'
+  gem 'awesome_print'
+  gem 'interactive_editor'
+  gem 'hirb'
+  gem 'rails-erd'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
