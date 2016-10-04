@@ -1,4 +1,4 @@
-<%= form_for(auction) do |f| %>
+<%= bootstrap_form_for(auction) do |f| %>
   <% if auction.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(auction.errors.count, "error") %> prohibited this auction from being saved:</h2>
@@ -12,12 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
 
   <div class="field">
-    <%= f.label :details %>
     <%= f.text_area :details %>
   </div>
 
@@ -28,7 +26,6 @@
   </script>
 
   <div class="field">
-    <%= f.label :price %>
     <%= f.number_field :price %>
   </div>
 
