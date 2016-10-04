@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-datepicker-rails'
 gem 'capybara'
 gem 'devise'
 gem 'kaminari'

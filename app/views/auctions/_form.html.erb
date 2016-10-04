@@ -4,9 +4,9 @@
       <h2><%= pluralize(auction.errors.count, "error") %> prohibited this auction from being saved:</h2>
 
       <ul>
-      <% auction.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% auction.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -21,10 +21,11 @@
     <%= f.text_area :details %>
   </div>
 
-  <div class="field">
-    <%= f.label :endon %>
-    <%= f.date_select :endon %>
-  </div>
+  <%= f.text_field :endon, 'data-behaviour' => 'datepicker' %>
+
+  <script type="text/javascript">
+    $('[data-behaviour~=datepicker]').datepicker();
+  </script>
 
   <div class="field">
     <%= f.label :price %>
